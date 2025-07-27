@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Keys</title>
+    <style>
+        /* Basic styling for table */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        th {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            color: #00c6ff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #00c6ff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 768px) {
+            table {
+                width: 90%;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Keys</h1>
+    <table>
+        <tr>
+            <th>Key ID</th>
+            <th>Key</th>
+            <th>Encrypted Message</th>
+            <th>Decrypted Message</th>
+            <th>Created At</th>
+        </tr>
+        {% for key in keys %}
+        <tr>
+            <td>{{ key.id }}</td>
+            <td>{{ key.key.hex }}</td> <!-- Convert key to hex for readability -->
+            <td>{{ key.data }}</td> <!-- Display encrypted message -->
+            {% with decrypted_data=key.dencrypteddata_set.first %}
+                <td>{{ decrypted_data.data|default:"Not available" }}</td> <!-- Display decrypted message -->
+            {% endwith %}
+            <td>{{ key.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+    <center>
+        <a href="/">Back to Homepage</a>
+    </center>
+</body>
+</html>

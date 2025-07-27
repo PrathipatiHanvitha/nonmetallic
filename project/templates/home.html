@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Data Integrity Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f1f1f1;
+            min-height: 100vh;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(30, 30, 30, 0.95);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f1f1f1;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00c6ff;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #bbb;
+            margin-bottom: 30px;
+        }
+
+        .hero-section a {
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .hero-section a:hover {
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.95);
+            color: #bbb;
+            margin-top: 50px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #00c6ff;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #0072ff;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div>
+            <h1>Welcome to Data Integrity</h1>
+            <p>Secure your data with cutting-edge encryption and seamless integrity management.</p>
+            <a href="/adminlogin">Admin Login</a>
+            <a href="/clientsignin">Client Login</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Data Integrity Project. All Rights Reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
